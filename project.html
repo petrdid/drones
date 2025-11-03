@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дрони у війні — роль безпілотників</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f0f4f8;
+      color: #1c1c1c;
+      line-height: 1.6;
+    }
+
+    /* Шапка */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #1b3a57;
+      color: #ffffff;
+    }
+
+    header nav a {
+      color: #ffffff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    header nav a:hover {
+      color: #ffca28;
+      transition: color 0.3s ease;
+    }
+
+    /* Головний екран */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1603386329225-868f9f7e8f85?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat;
+      text-align: center;
+      padding: 130px 20px;
+    }
+
+    .hero h2, .hero p {
+      color: #1b3a57;
+      text-shadow: none;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.8s ease;
+    }
+
+    /* Анімації */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Секції */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #1b3a57;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    /* Картки */
+    .card {
+      position: relative;
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.5s ease;
+    }
+
+    .card p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 12px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .card:hover p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Контактна форма */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .contact input, .contact textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      resize: none;
+    }
+
+    button {
+      background: #1b3a57;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background: #244f78;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #1b3a57;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка -->
+  <header>
+    <h1>Дрони у війні</h1>
+    <nav>
+      <a href="#types">Типи</a>
+      <a href="#role">Роль</a>
+      <a href="#contact">Контакт</a>
+    </nav>
+  </header>
+
+  <!-- Головний екран -->
+  <section class="hero">
+    <h2>Безпілотники — очі, вуха й сила сучасного війська</h2>
+    <p>Технології змінюють поле бою. Україна — серед лідерів у використанні військових дронів.</p>
+  </section>
+
+  <!-- Типи дронів -->
+  <section id="types" class="section">
+    <h2>Типи та приклади бойових дронів</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSKJ8BbXhntqQyfQDKoVlJFkKkqBunyTgqQg&s" alt="Bayraktar TB2">
+        <p><b>Bayraktar TB2</b> — турецький ударний дрон середньої дальності, активно використовується ЗСУ.</p>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/UA_military_FPV_drones_10.jpg/1200px-UA_military_FPV_drones_10.jpg" alt="FPV Drone">
+        <p><b>FPV-дрон</b> — дешевий, швидкий дрон із відеопередачею в реальному часі, застосовується для точкових атак.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.cnscdn.com/0/5/3/a/053aa7f8b0ded5b033233c66b28a5024/original.jpg" alt="DJI Mavic">
+        <p><b>DJI Mavic</b> — цивільний дрон, який використовується для розвідки та спостереження.</p>
+      </div>
+      <div class="card">
+        <img src="https://forbes.ua/static/storage/thumbs/1200x630/7/c9/9a854a36-f18408ce1fab5334fb8dd53d6d10fc97.jpg?v=7380_4" alt="Punisher Drone">
+        <p><b>Punisher</b> — український ударний дрон для високоточної доставки боєприпасів.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Роль дронів -->
+  <section id="role" class="section">
+    <h2>Роль безпілотників у війні</h2>
+    <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+      Безпілотники відіграють вирішальну роль у сучасних збройних конфліктах. 
+      Вони дозволяють військовим здійснювати <b>розвідку, коригування артилерії, спостереження та удари по цілях</b> 
+      без ризику для життя операторів.  
+      <br><br>
+      Застосування дронів забезпечує <b>точність ударів</b>, зменшує втрати серед особового складу 
+      та підвищує ефективність бойових дій. Завдяки камерам високої роздільності та тепловізорам 
+      безпілотники дають змогу вести цілодобове спостереження за ворогом.  
+      <br><br>
+      Україна активно розробляє власні моделі — <b>Punisher</b>, <b>Shark</b>, <b>Leleka-100</b> — 
+      які поєднують мобільність, точність і автономність. FPV-дрони стали інноваційною зброєю ближнього бою, 
+      що дозволяє вражати цілі з мінімальними витратами.  
+      <br><br>
+      У сучасній війні дрони — це не лише інструмент, а <b>символ технологічної переваги, гнучкості та мужності</b> 
+      українського війська.
+    </p>
+  </section>
+
+  <!-- Контактна форма -->
+  <section id="contact" class="section contact">
+    <h2>Зворотний зв’язок</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Ваш коментар"></textarea>
+      <button type="submit">Надіслати</button>
+    </form>
+    <p id="message"></p>
+  </section>
+
+  <!-- Підвал -->
+  <footer>
+    © 2025 | “Дрони у війні”.  
+    <a href="https://github.com/" style="color: #ffca28; text-decoration: underline;">GitHub</a>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("message").textContent = "✅ Дякуємо! Ваше повідомлення успішно надіслано.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
